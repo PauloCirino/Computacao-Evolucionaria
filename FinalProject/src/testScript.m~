@@ -1,0 +1,51 @@
+clear()
+fileName324 = '../testData/pmedian324.txt';
+fileName818 = '../testData/pmedian818.txt';
+fileName3282 = '../testData/pmedian3282.txt';
+
+
+
+fileName = fileName324;
+
+%General Parameters
+seed = 130594;
+popSize = 100;
+maxIterations = 75;
+numRepredutionsPerGen = round(0.5 * popSize) + 1;
+
+%Selection Parameters
+numSelectedParents = round(0.1 * popSize) + 2;
+
+%Mutation Parameters
+mutationRate = 0.2;
+
+%Survivors Chosing Parameters
+elit = 1;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   TEST NUM 1 
+popSize = 50;
+thisBest = pMeans(fileName, popSize, numRepredutionsPerGen, numSelectedParents, mutationRate, elit, maxIterations, seed);
+Best(1) = thisBest(end);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   TEST NUM 2 
+popSize = 25;
+thisBest = pMeans(fileName, popSize, numRepredutionsPerGen, numSelectedParents, mutationRate, elit, maxIterations, seed);
+Best(2) = thisBest(end);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   TEST NUM 3
+popSize = 20;
+thisBest = pMeans(fileName, popSize, numRepredutionsPerGen, numSelectedParents, mutationRate, elit, maxIterations, seed);
+Best(3) = thisBest(end);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   TEST NUM 4
+popSize = 10;
+thisBest = pMeans(fileName, popSize, numRepredutionsPerGen, numSelectedParents, mutationRate, elit, maxIterations, seed);
+Best(1) = thisBest(end);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
